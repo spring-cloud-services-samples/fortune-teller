@@ -11,10 +11,7 @@
     <name>Fortune Teller Cloud-Native Application</name>
 
     <modules>
-        <module>fortune-teller-config-server</module>
-        <module>fortune-teller-eureka</module>
         <module>fortune-teller-fortune-service</module>
-        <module>fortune-teller-hystrix-dashboard</module>
         <module>fortune-teller-ui</module>
     </modules>
 
