@@ -56,17 +56,6 @@ This will push the fortunes service and the ui application and bind all of the s
 +
 image:docs/images/fortunes_1.png[]
 
-. Now, in another browser tab, access the Hystrix Dashboard at the route that was created for you.
-Enter the route for the UI application and click the ``Monitor Stream.''
-+
-NOTE: On Pivotal Cloud Foundry, you can access a pre-configured Hystrix Dashboard by clicking on the *Manage* link for *Circuit Breaker Dashboard*. You will *NOT* need to paste in the route.
-+
-image:docs/images/fortunes_2.png[]
-
-. Access the fortunes-ui and show that the circuit breaker is registering successful requests.
-+
-image:docs/images/fortunes_3.png[]
-
 . Stop the fortunes application:
 +
 ----
@@ -77,16 +66,10 @@ $ cf stop fortunes
 +
 image:docs/images/fortunes_4.png[]
 
-. Access the fortunes-ui and show that the circuit breaker is registering short-circuited requests.
-+
-image:docs/images/fortunes_5.png[]
-
 . Start the fortunes application:
 +
 ----
 $ cf start fortunes
 ----
 
-. Continue to access the fortunes-ui and watch the dashboard.
-After the fortunes service has re-registered with Eureka and the fortunes-ui load balancer caches are refreshed, you will see the circuit breaker recover.
-You should then start getting random fortunes again!
+. Continue to access the fortunes-ui. After the fortunes service has re-registered with Eureka and the fortunes-ui load balancer caches are refreshed, you should then start getting random fortunes again!
