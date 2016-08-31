@@ -10,24 +10,24 @@ It leverages libraries and services from Spring Cloud and Netflix OSS to compose
 Fortune Teller is deployable to any Cloud Foundry environment utilizing the service components that have been packaged with the project.
 However, it is most easily deployed to Pivotal Cloud Foundry environments that have installed the https://network.pivotal.io/products/p-spring-cloud-services[Spring Cloud Services] package.
 
-== Building
+== Build
 
 . Using Maven, build and package the application:
 +
 ----
-$ mvn package
+$ mvn clean package
 ----
 +
 Maven will automatically download all of _Fortune Teller_'s dependencies. This may take a few moments.
 
 
-== Deploying to Pivotal Cloud Foundry with Spring Cloud Services
+== Deploy to Pivotal Cloud Foundry with Spring Cloud Services
 
-. Run `scripts/create_services_pcf.sh` to create the services that you need:
+. Run `scripts/pcf-create-services.sh` to create the services that you need:
 +
 ----
-$ ./scripts/create_services_pcf.sh
-Creating service fortune-db in org microservices / space fortune-teller as admin...
+$ ./scripts/pcf-create-services.sh
+Creating service fortunes-db in org microservices / space fortune-teller as admin...
 OK
 Creating service config-server in org microservices / space fortune-teller as admin...
 OK
@@ -39,7 +39,7 @@ OK
 
 . Click on the *Manage* links for the *Config Service*, *Service Registry*, and *Circuit Breaker Dashboard*. Make sure the services are finished initializing before you proceed.
 
-. Edit the `manifest-pcf.yml` file to specify the Cloud Foundry target the apps are being pushed to, replacing the URL in `CF_TARGET: https://api.cf.deepsouthcloud.com` with the API endpoint for your Cloud Foundry deployment.
+. Edit the `manifest-pcf.yml` file to specify the Cloud Foundry target the apps are being pushed to, replacing the URL in `CF_TARGET: https://api.yourpcfenvironment.local` with the API endpoint for your Cloud Foundry deployment.
 
 . Push the microservices:
 
@@ -50,45 +50,7 @@ $ cf push -f manifest-pcf.yml
 +
 This will push the fortunes service and the ui application and bind all of the services.
 
-== Deploying to Pivotal Web Services (or other Cloud Foundry environments)
-
-. Push the Spring Cloud services:
-+
-----
-$ cf push -f manifest-services.yml
-----
-+
-This will push a Spring Cloud Config Server, a Eureka server, and a Hystrix Dashboard, all with random routes.
-
-. Edit `scripts/create_services.sh` to add the random routes that were generated for you:
-+
-----
-cf cups config-server -p '{"uri":"http://config-server-fluxional-suttee.cfapps.io"}'
-cf cups service-registry -p '{"uri":"http://eureka-unprevalent-toper.cfapps.io"}'
-cf cs elephantsql turtle fortunes-db
-----
-
-. Run `scripts/create_services.sh` to create the services that you need:
-+
-----
-$ scripts/create_services.sh
-Creating user provided service config-server in org platform-eng / space nfjs-workshop as mstine@pivotal.io...
-OK
-Creating user provided service service-registry in org platform-eng / space nfjs-workshop as mstine@pivotal.io...
-OK
-Creating service fortunes-db in org platform-eng / space nfjs-workshop as mstine@pivotal.io...
-OK
-----
-
-. Push the microservices:
-+
-----
-$ cf push -f manifest-apps.yml
-----
-+
-This will push the fortunes service and the ui application.
-
-== Testing the Application
+== Test the Application
 
 . In a browser, access the fortunes-ui application at the route that was created for you:
 +
