@@ -17,13 +17,6 @@ management:
 ---
 
 spring:
-  profiles: default
-  jpa:
-    database: HSQL
-
----
-
-spring:
   profiles: pcf
   jpa:
     database: MYSQL

@@ -1,6 +1,3 @@
 spring:
   application:
     name: fortunes
-  cloud:
-    config:
-      uri: ${vcap.services.config-server.credentials.uri:http://localhost:8888}
