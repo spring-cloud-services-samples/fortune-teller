@@ -17,6 +17,5 @@ applications:
   - service-registry
   - circuit-breaker-dashboard
 env:
-  SPRING_PROFILES_ACTIVE: pcf
   # Replace with API URI of target PCF environment
   #CF_TARGET: https://api.yourpcfenvironment.local
