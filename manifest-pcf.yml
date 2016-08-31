@@ -1,8 +1,8 @@
 ---
 instances: 1
-memory: 1024M
 applications:
 - name: fortune-service
+  memory: 512M
   host: fortunes
   path: fortune-teller-fortune-service/target/fortune-teller-fortune-service-0.0.1-SNAPSHOT.jar
   services:
@@ -10,6 +10,7 @@ applications:
   - config-server
   - service-registry
 - name: fortune-ui
+  memory: 1024M
   host: fortunes-ui
   path: fortune-teller-ui/target/fortune-teller-ui-0.0.1-SNAPSHOT.jar
   services:
