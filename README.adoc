@@ -59,7 +59,7 @@ image:docs/images/fortunes_1.png[]
 . Stop the fortunes application:
 +
 ----
-$ cf stop fortunes
+$ cf stop fortune-service
 ----
 
 . Access the fortunes-ui and see that the ``fallback fortune'' is being returned.
@@ -69,7 +69,7 @@ image:docs/images/fortunes_4.png[]
 . Start the fortunes application:
 +
 ----
-$ cf start fortunes
+$ cf start fortune-service
 ----
 
 . Continue to access the fortunes-ui. After the fortunes service has re-registered with Eureka and the fortunes-ui load balancer caches are refreshed, you should then start getting random fortunes again!
