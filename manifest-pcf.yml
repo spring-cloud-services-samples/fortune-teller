@@ -16,7 +16,7 @@ applications:
   services:
   - config-server
   - service-registry
-  - circuit-breaker-dashboard
-env:
+  - circuit-breaker
+#env:
   # Replace with API URI of target PCF environment
   #CF_TARGET: https://api.yourpcfenvironment.local
