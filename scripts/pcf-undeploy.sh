@@ -8,4 +8,4 @@ cf delete fortune-ui -f
 cf delete-service fortunes-db -f
 cf delete-service config-server -f
 cf delete-service service-registry -f
-cf delete-service circuit-breaker-dashboard -f
+cf delete-service circuit-breaker -f
