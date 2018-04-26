@@ -1,21 +1,20 @@
 ---
 applications:
-- name: fortune-service
+- name: fortunes
   memory: 1024M
-  host: fortunes
+  random-route: true
   path: fortune-teller-fortune-service/target/fortune-teller-fortune-service-0.0.1-SNAPSHOT.jar
+  instances: 1
   services:
   - fortunes-db
   - config-server
   - service-registry
 - name: fortune-ui
   memory: 1024M
-  host: fortunes-ui
+  random-route: true
   path: fortune-teller-ui/target/fortune-teller-ui-0.0.1-SNAPSHOT.jar
+  instances: 1
   services:
   - config-server
   - service-registry
   - circuit-breaker
-#env:
-  # Replace with API URI of target PCF environment
-  #CF_TARGET: https://api.yourpcfenvironment.local
