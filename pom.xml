@@ -61,7 +61,7 @@
             <dependency>
                 <groupId>io.pivotal.spring.cloud</groupId>
                 <artifactId>spring-cloud-services-dependencies</artifactId>
-                <version>2.0.0.M1</version>
+                <version>2.0.0.BUILD-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -91,9 +91,12 @@
             <url>https://repo.spring.io/libs-release/</url>
         </repository>
         <repository>
-            <id>spring-milestone-repository</id>
-            <name>Spring Milestone Repository</name>
-            <url>https://repo.spring.io/libs-milestone/</url>
+            <id>spring-snapshot-repository</id>
+            <name>Spring Snapshot Repository</name>
+            <url>https://repo.spring.io/libs-snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
