@@ -1,13 +1,11 @@
 ribbon:
-  IsSecure: false
-
-security:
-  basic:
-    enabled: false
+  isSecure: false
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 ---
 

@@ -18,7 +18,7 @@
 
 import au.com.dius.pact.consumer.*;
 import au.com.dius.pact.model.PactFragment;
-import io.spring.cloud.samples.fortuneteller.ui.Application;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +39,7 @@ import static org.junit.Assert.assertThat;
 @SpringBootTest
 @WebAppConfiguration
 @ActiveProfiles({"pact"})
+@Ignore
 public class FortuneServicePactTest {
 
     @Autowired

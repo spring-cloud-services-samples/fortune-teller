@@ -23,6 +23,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-services-starter-config-client</artifactId>
         </dependency>
