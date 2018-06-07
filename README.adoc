@@ -1,3 +1,5 @@
+image:https://circleci.com/gh/spring-cloud-services-samples/fortune-teller.svg?style=svg["CircleCI", link="https://circleci.com/gh/spring-cloud-services-samples/fortune-teller"]
+
 = Fortune Teller
 
 *Fortune Teller* is a very basic application composed of two services:
