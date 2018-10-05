@@ -8,6 +8,9 @@ applications:
   - fortunes-db
   - config-server
   - service-registry
+  #env:
+    # Replace with API URI of target PCF environment
+    #CF_TARGET: https://api.yourpcfenvironment.local
 - name: fortune-ui
   memory: 1024M
   host: fortunes-ui
@@ -16,6 +19,6 @@ applications:
   - config-server
   - service-registry
   - circuit-breaker
-#env:
-  # Replace with API URI of target PCF environment
-  #CF_TARGET: https://api.yourpcfenvironment.local
+  #env:
+    # Replace with API URI of target PCF environment
+    #CF_TARGET: https://api.yourpcfenvironment.local
