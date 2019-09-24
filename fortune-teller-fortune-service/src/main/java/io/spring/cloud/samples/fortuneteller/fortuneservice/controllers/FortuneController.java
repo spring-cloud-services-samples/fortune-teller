@@ -37,7 +37,7 @@ public class FortuneController {
 
     @RequestMapping("/random")
     public Fortune randomFortune() {
-        List<Fortune> randomFortunes = repository.randomFortunes(new PageRequest(0, 1));
+        List<Fortune> randomFortunes = repository.randomFortunes(PageRequest.of(0, 1));
         return randomFortunes.get(0);
     }
 }

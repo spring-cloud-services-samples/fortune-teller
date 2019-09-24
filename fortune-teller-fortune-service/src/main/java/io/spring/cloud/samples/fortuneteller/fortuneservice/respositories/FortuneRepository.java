@@ -24,6 +24,6 @@ import java.util.List;
 
 public interface FortuneRepository extends PagingAndSortingRepository<Fortune, Long> {
 
-    @Query("select fortune from Fortune fortune order by RAND()")
-    public List<Fortune> randomFortunes(Pageable pageable);
+    @Query(value = "select fortune from Fortune fortune order by RAND()")
+    List<Fortune> randomFortunes(Pageable pageable);
 }
