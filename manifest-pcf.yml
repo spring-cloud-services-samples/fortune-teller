@@ -2,7 +2,7 @@
 applications:
 - name: fortune-service
   memory: 1024M
-  host: fortunes
+  random-route: true
   path: fortune-teller-fortune-service/target/fortune-teller-fortune-service-0.0.1-SNAPSHOT.jar
   services:
   - fortunes-db
@@ -13,7 +13,7 @@ applications:
     #CF_TARGET: https://api.yourpcfenvironment.local
 - name: fortune-ui
   memory: 1024M
-  host: fortunes-ui
+  random-route: true
   path: fortune-teller-ui/target/fortune-teller-ui-0.0.1-SNAPSHOT.jar
   services:
   - config-server
