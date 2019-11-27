@@ -27,8 +27,11 @@ import java.util.List;
 @RestController
 public class FortuneController {
 
-    @Autowired
-    FortuneRepository repository;
+    private FortuneRepository repository;
+
+    public FortuneController(FortuneRepository repository) {
+      this.repository = repository;
+    }
 
     @RequestMapping("/fortunes")
     public Iterable<Fortune> fortunes() {

@@ -16,7 +16,9 @@
  package io.spring.cloud.samples.fortuneteller.ui.services.fortunes;
 
 public class Fortune {
+
     private Long id;
+
     private String text;
 
     public Fortune() {
