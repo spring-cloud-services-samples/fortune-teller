@@ -15,11 +15,15 @@
  */
  package io.spring.cloud.samples.fortuneteller.ui.services.fortunes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class FortuneService {
+    private Logger log = LoggerFactory.getLogger(FortuneService.class);
 
     private RestTemplate rest;
 
@@ -28,7 +32,11 @@ public class FortuneService {
     }
 
     public Fortune randomFortune() {
-        return rest.getForObject("http://fortunes/random", Fortune.class);
+        try {
+            return rest.getForObject("http://fortunes/random", Fortune.class);
+        } catch (RestClientException e) {
+            log.error("Failed to get fortune from fortune-service", e);
+            return new Fortune(42l, "Your future is unclear.");
+        }
     }
-
 }

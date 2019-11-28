@@ -8,7 +8,9 @@ applications:
   - fortunes-db
   - config-server
   - service-registry
-  #env:
+  env:
+    # JBP adds deprecated connectors when using mysql service
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{"enabled":false}'
     # Replace with API URI of target PCF environment
     #CF_TARGET: https://api.yourpcfenvironment.local
 - name: fortune-ui
@@ -18,6 +20,7 @@ applications:
   services:
   - config-server
   - service-registry
-  #env:
+  env:
     # Replace with API URI of target PCF environment
     #CF_TARGET: https://api.yourpcfenvironment.local
+

@@ -17,4 +17,3 @@ applications:
   services:
   - fortunes-config-server
   - fortunes-service-registry
-  - fortunes-circuit-breaker-dashboard
