@@ -1,0 +1,72 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(#82c4e0, #48779a);
+  background-repeat: no-repeat;
+}
+
+.jumbotron {
+	background-color: transparent;
+	font-family: 'Luckiest Guy', cursive;
+	color: #fff;
+	text-align: center;
+	padding-top: 100px;
+	margin-bottom: 0;
+	padding-bottom: 40px;
+}
+
+.ng-binding {
+	text-align: center;
+}
+
+.container.ng-scope {
+	height: 360px;
+	background-image: url('../images/fortune-teller-cookie.png');
+	background-repeat: no-repeat;
+	background-size: 1000px;
+	position: relative;
+	background-position: center;
+}
+
+.container.ng-scope .ng-scope {
+	margin: 0 auto;
+  position: absolute;
+  top: 43%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align: center;
+  max-width: 420px;
+  left: 50%;
+}
+
+@media (min-width: 768px) {
+	.jumbotron h1 {
+		font-size: 110px;
+		line-height: 92px;
+	}
+
+	.jumbotron p {
+		font-size: 45px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.container.ng-scope {
+		background-size: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.jumbotron h1 {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 420px) {
+	.container.ng-scope {
+		background-size: 450px;
+	}
+
+	.container.ng-scope .ng-scope {
+		top: 47%;
+	}
+}
