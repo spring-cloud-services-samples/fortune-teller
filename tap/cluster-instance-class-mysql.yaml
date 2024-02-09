@@ -1,0 +1,11 @@
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClusterInstanceClass
+metadata:
+ name: mysql
+spec:
+ description:
+  short: It's a MySQL database!
+ pool:
+  group: with.sql.tanzu.vmware.com
+  kind: MySQL
