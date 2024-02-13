@@ -7,8 +7,12 @@ metadata:
  labels:
   apps.tanzu.vmware.com/workload-type: web
   apps.tanzu.vmware.com/has-tests: "true"
-  app.kubernetes.io/part-of: greeter
+  app.kubernetes.io/part-of: fortune
 spec:
+ params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
  build:
   env:
    - name: BP_JVM_VERSION
@@ -27,8 +31,8 @@ spec:
   - name: db
     ref:
      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-     kind: ResourceClaim
-     name: mysql-claim
+     kind: ClassClaim
+     name: fortune-database
  source:
   git:
    url: https://github.com/akrishna90/fortune-teller
