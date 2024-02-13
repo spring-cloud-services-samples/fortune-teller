@@ -9,3 +9,15 @@ spec:
   kind: EurekaServer
   name: eurekaserver-sample
   namespace: my-apps
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaim
+metadata:
+ name: fortune-config
+ namespace: my-apps
+spec:
+ ref:
+  apiVersion: config.apps.tanzu.vmware.com/v1alpha4
+  kind: ConfigurationSlice
+  name: fortune-config-slice
+  namespace: my-apps

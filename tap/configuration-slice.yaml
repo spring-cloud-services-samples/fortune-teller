@@ -1,0 +1,9 @@
+apiVersion: "config.apps.tanzu.vmware.com/v1alpha4"
+kind: ConfigurationSlice
+metadata:
+ name: fortune-config-slice
+ namespace: my-apps
+spec:
+ configurationSource: fortune-config-source
+ content:
+  - application/default

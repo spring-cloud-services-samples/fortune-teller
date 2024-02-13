@@ -16,12 +16,12 @@ spec:
  build:
   env:
    - name: BP_JVM_VERSION
-     value: "17"
+     value: "8"
    - name: BP_MAVEN_BUILT_MODULE
      value: "fortune-teller-fortune-service"
  env:
-  - name: SPRING_PROFILES_ACTIVE
-    value: "development"
+  - name: SPRING_CONFIG_IMPORT
+    value: "optional:configtree:${SERVICE_BINDING_ROOT}/spring-properties/"
  serviceClaims:
   - name: eureka
     ref:
@@ -33,6 +33,11 @@ spec:
      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
      kind: ClassClaim
      name: fortune-database
+  - name: spring-properties
+    ref:
+     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+     kind: ResourceClaim
+     name: fortune-config
  source:
   git:
    url: https://github.com/akrishna90/fortune-teller

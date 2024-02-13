@@ -1,0 +1,10 @@
+apiVersion: config.apps.tanzu.vmware.com/v1alpha4
+kind: ConfigurationSource
+metadata:
+ name: fortune-config-source
+ namespace: my-apps
+spec:
+ backends:
+  - type: git
+    uri: https://github.com/akrishna90/fortune-teller.git
+    defaultLabel: main
