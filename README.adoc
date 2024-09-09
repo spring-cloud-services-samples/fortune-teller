@@ -10,7 +10,7 @@ image:https://circleci.com/gh/spring-cloud-services-samples/fortune-teller.svg?s
 It leverages libraries and services from Spring Cloud and Netflix OSS to compose the system.
 
 Fortune Teller is deployable to any Cloud Foundry environment utilizing the service components that have been packaged with the project.
-However, it is most easily deployed to Pivotal Cloud Foundry environments that have installed the https://network.pivotal.io/products/p-spring-cloud-services[Spring Cloud Services] package.
+However, it is most easily deployed to Tanzu Platform for Cloud Foundry environments that have installed the https://network.pivotal.io/products/p-spring-cloud-services[Spring Cloud Services] package.
 
 == Build
 
@@ -23,7 +23,7 @@ $ mvn clean package
 Maven will automatically download all of _Fortune Teller_'s dependencies. This may take a few moments.
 
 
-== Deploy to Pivotal Cloud Foundry with Spring Cloud Services
+== Deploy to Tanzu Platform for Cloud Foundry with Spring Cloud Services
 
 . Run `scripts/pcf-create-services.sh` to create the services that you need:
 +
